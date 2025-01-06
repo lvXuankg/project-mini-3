@@ -1,6 +1,8 @@
 :root{
     --font-use: "Playwrite AU SA", serif;
     --text-hov-1: #D0DDD0;
+    --text-hov-2: #E16A54;
+    --color-1: #AB886D;
 }
 *{
     font-family: var(--font-use);
