@@ -64,25 +64,27 @@ body{
 .categories{
     background-color: #000;
 }
-.categories .nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.categories .nav li{
-    width: calc(100%/5);
-}
-.categories .nav li a{
-    color: #fff;
-    display: block;
+.categories .inner-wrap{
     width: 100%;
-    border-radius: 15px 15px 0 0;
-    padding: 0.4rem 0;
-    transition: 0.6 all;
-    text-align: center;
 }
-.categories .nav li:hover a{
+.categories .inner-wrap a{
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+    
+    padding: 0.3rem 0;
+}
+
+.categories .inner-wrap a:hover{
     background-color: var(--text-hov-2);
+}
+@media (max-width: 992px){
+    .categories .inner-wrap a{
+        border-radius: 15px;
+    }
 }
 /* End Categories  */
 /* Banner 1  */
