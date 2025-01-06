@@ -1,3 +1,11 @@
+:root{
+    --font-use: "Playwrite AU SA", serif;
+    --text-hov-1: #D0DDD0;
+}
+*{
+    font-family: var(--font-use);
+}
 a{
     text-decoration: none;
+    color: #000;
 }
