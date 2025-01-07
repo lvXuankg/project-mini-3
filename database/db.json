@@ -1,0 +1,64 @@
+{
+    "humans" : [
+        {
+            "id" : "1",
+            "name" : "Trạnh Minh Thình",
+            "price": 120000,
+            "slots": 1,
+            "image": "assets/images/human1.jpg"
+        },
+        {
+            "id" : "2",
+            "name" : "Lâm Nhật Tin",
+            "price": 5000,
+            "slots": 1,
+            "image": "assets/images/human2.jpg"
+        },
+        {
+            "id" : "3",
+            "name" : "Tú Sena",
+            "price": 1,
+            "slots": 1,
+            "image": "assets/images/human3.png"
+        }
+    ],
+    "goods" : [
+        {
+            "id" : "1",
+            "name": "Máy tính casio của Thành",
+            "price": 100000,
+            "slots": 1,
+            "image": "assets/images/goods1.jpg"
+        }
+    ],
+    "laptop" : [
+        {
+            "id" : "1",
+            "name": "Acer Nitro 5 của Thành",
+            "price": 15000000,
+            "slots": 1,
+            "image": "assets/images/laptop1.jpg"
+        }
+    ],
+    "books" : [
+        {
+            "id" : "1",
+            "name": "Sách của Thành",
+            "price": 20000,
+            "slots": 1,
+            "image": "assets/images/book1.jpg"
+        }
+    ],
+    "telephone": [
+        {
+            "id" : "1",
+            "name": "Iphone 100 của Thành",
+            "price": 10000000,
+            "slots": 1,
+            "image": "assets/images/phone1.jfif"
+        }
+    ],
+    "mita": [
+
+    ]
+}
