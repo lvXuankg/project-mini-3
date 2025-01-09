@@ -21,7 +21,6 @@ function setPrice(x){
         }
         result = num + (result ? "," : "") + result;
         
-        console.log(x);
     }
     return result;
 }
@@ -41,13 +40,14 @@ buttonClose1.addEventListener("click", ()=>{
 
 //Sell Gocery
 const divSell = document.querySelector("#sellGrocery");
+var getAllGrocery;
 var urls = [
-    "http://localhost:3000/humans",
-    "http://localhost:3000/goods",
-    "http://localhost:3000/laptop",
-    "http://localhost:3000/books",
-    "http://localhost:3000/telephone",
-    "http://localhost:3000/mita"
+    "https://database-project-mini-3-one.vercel.app/humans",
+    "https://database-project-mini-3-one.vercel.app/goods",
+    "https://database-project-mini-3-one.vercel.app/laptop",
+    "https://database-project-mini-3-one.vercel.app/books",
+    "https://database-project-mini-3-one.vercel.app/telephone",
+    "https://database-project-mini-3-one.vercel.app/mita"
 ]
 
 async function getAllApi(){
@@ -59,9 +59,61 @@ async function getAllApi(){
     return dataApi;
 
 }
+// Show Item 
+function CloseModal(){
+    const divContainerModal = document.querySelector("#modalContainer");
+    divContainerModal.classList.remove("show");
+}
+function addToCart(x){
+
+}
+function showItem(x){
+    const divContainerModal = document.querySelector("#modalContainer");
+    const divModal = document.querySelector("#modal");
+    const item = getAllGrocery[x];
+    divModal.innerHTML = `
+    <div class="box">
+        <div class="imgContainer">
+            <img src="${item.image}">
+        </div>
+        <div class="contentContainer">
+            <div class="name">
+                <b>${item.name}</b>
+            </div>
+            <div class="description">
+                <b>Giới thiệu :</b> <i>${item.description}</i>
+            </div>
+            <div class="price">
+                <b>Giá :</b> ${setPrice(item.price)}
+            </div>
+            <div class="slots">
+                <b>Còn lại :</b> ${item.slots}
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="closeButton" onclick="CloseModal()">Close</button>
+        <button class="addToCart" onclick="addToCart(${x});CloseModal();">Add</button>
+    </div>
+    
+    
+    `
+    divContainerModal.classList.add("show");
+
+}
+const divCModal = document.querySelector("#modalContainer");
+divCModal.addEventListener("click", (event)=>{
+    if(event.target == divCModal){
+        divCModal.classList.remove("show"); 
+    }
+      
+});
+// Show Item 
+// Show all Item 
 function showAllItem(viewMore){
     getAllApi()
     .then(data => {
+        getAllGrocery = data;
         let count = 0;
         let htmls = `
         <div class="container">
@@ -75,8 +127,8 @@ function showAllItem(viewMore){
             }
             htmls += `
                 <div class="col-xl-2 col-lg-3 col-md-6 col-6">
-                    <div class="inner-wrap">
-                        <div class="imageContainer" >
+                    <div class="inner-wrap" onclick="showItem(${count-1})">
+                        <div class="imageContainer">
                             <img src="${x.image}">
                         </div>
                         <h3>${x.name}</h3>
@@ -105,9 +157,6 @@ function showAllItem(viewMore){
     })
 }
 showAllItem(false);
-{/* <div class="viewMore">
-            <i class="fa-solid fa-toggle-off"></i>
-            <span>View More</span>
-        </div> */}
+// End Show All Item 
 
 

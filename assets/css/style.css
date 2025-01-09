@@ -38,8 +38,11 @@ body{
 .cart::before{
     animation-delay: 0.9s;
 }
+.cart.hidden::after, .cart.hidden::before{
+    animation: none;
+}
 /* End Effect  */
-/* Float Icon  */
+/* Float Items  */
 .cart{
     width: 50px;
     height: 50px;
@@ -54,6 +57,10 @@ body{
     align-items: center;
     cursor: pointer;
 }
+.cart.hidden{
+    display: none;
+}
+
 .cart .floatIcon{
     font-size: 20px;
     transition: 0.6s all;
@@ -61,7 +68,82 @@ body{
 .cart:hover .floatIcon{
     transform: scale(1.3);
 }
-/* End Float Icon  */
+
+.modalContainer{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color:rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+.modalContainer.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalContainer .modal{
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    position: relative;
+    overflow:hidden;
+    padding: 30px 50px;
+    border-radius: 5px;
+}
+.modalContainer .modal .box{
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+}
+.modalContainer .modal .imgContainer{
+    padding-right: 5px;
+    width: 50%;
+    display: block;
+}
+.modalContainer .modal img{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+}
+.modalContainer .modal .contentContainer{
+    display: block;
+    width: 50%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.modalContainer .modal .contentContainer .name{
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.modalContainer .modal .contentContainer .description{
+    margin-bottom: 15px;
+}
+.modalContainer .modal .buttons{
+    display: flex; 
+    justify-content: flex-end;
+}
+.modalContainer .modal .addToCart{
+    margin-left: 25px;
+    border-radius: 15px;
+    width: 80px;
+}
+.modalContainer .modal .closeButton{
+    border-radius: 15px;
+    width: 80px;
+}
+
+/* End Float Items  */
 /* Header  */
 .header{
     padding: 0.8rem 0;
@@ -72,7 +154,7 @@ body{
     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 1000;
+    z-index: 50;
 }
 .header .inner-wrap{
     display: flex;

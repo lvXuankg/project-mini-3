@@ -11,8 +11,8 @@
         {
             "id" : "2",
             "name" : "Lâm Nhật Tin",
-            "price": 5000,
-            "description": "Người Bình Định toi ăn gió ăn sương",
+            "price": 500000,
+            "description": "Là Anh Ba, cũng là người Bình Định toi ăn gió ăn sương",
             "slots": 1,
             "image": "assets/images/human2.jpg"
         },
@@ -28,9 +28,25 @@
             "id" : "4",
             "name" : "Chí",
             "description": "học nhiều vl",
-            "price": 1,
+            "price": 20000,
             "slots": 1,
             "image": "assets/images/human4.png"
+        },
+        {
+            "id" : "5",
+            "name" : "Khang ăn sinh nhật",
+            "description": "Sinh nhật vui vẻ",
+            "price": 100000,
+            "slots": 1,
+            "image": "assets/images/human5.png"
+        },
+        {
+            "id" : "6",
+            "name" : "Combo cặp ba TKM",
+            "description": "Đi ăn spicy box",
+            "price": 250000,
+            "slots": 1,
+            "image": "assets/images/human6.png"
         }
     ],
     "goods" : [
@@ -153,6 +169,102 @@
             "description": "Quạt phổ thông ai đều có",
             "slots": 1,
             "image": "assets/images/goods15.jpg"
+        },
+        {
+            "id" : "16",
+            "name": "Mèo đá",
+            "price": 100000,
+            "description": "Mèo đang ở trạng thái ngấm đá",
+            "slots": 1,
+            "image": "assets/images/goods16.jpg"
+        },
+        {
+            "id" : "17",
+            "name": "Mèo tức giận",
+            "price": 100000,
+            "description": "Mèo bị tức giận vì bị hỏi lương bao nhiêu vậy cháu ngay dịp tết",
+            "slots": 1,
+            "image": "assets/images/goods17.jpg"
+        },
+        {
+            "id" : "18",
+            "name": "Gấu bông dễ thương",
+            "price": 3000000,
+            "description": "Gấu bông siêu dễ thương cute",
+            "slots": 1,
+            "image": "assets/images/goods18.jpg"
+        },
+        {
+            "id" : "19",
+            "name": "Chó mặt hèn",
+            "price": 3500,
+            "description": "Con chó nhưng mặt hèn",
+            "slots": 1,
+            "image": "assets/images/goods19.jpg"
+        },
+        {
+            "id" : "20",
+            "name": "Satra đang giảm giá nè",
+            "price": 25000,
+            "description": "Compucha giảm nè ae",
+            "slots": 1,
+            "image": "assets/images/goods20.png"
+        },
+        {
+            "id" : "21",
+            "name": "Mưa ở PTIT",
+            "price": 150000,
+            "description": "Trời mưa đẹp nhất PTIT",
+            "slots": 1,
+            "image": "assets/images/goods21.jpg"
+        },
+        {
+            "id" : "22",
+            "name": "Bánh canh ăn dang dở",
+            "price": 30000,
+            "description": "Bánh canh lề đường",
+            "slots": 1,
+            "image": "assets/images/goods22.jpg"
+        },
+        {
+            "id" : "23",
+            "name": "Xe máy",
+            "price": 10000000,
+            "description": "Độ mới 99%",
+            "slots": 1,
+            "image": "assets/images/goods23.png"
+        },
+        {
+            "id" : "24",
+            "name": "Trường PTIT trong mơ",
+            "price": 999999999,
+            "description": "PTIT ảo không có thật",
+            "slots": 1,
+            "image": "assets/images/goods24.jpg"
+        },
+        {
+            "id" : "25",
+            "name": "Huy chương ICPC",
+            "price": 200000,
+            "description": "Huy chương ICPC PTIT HCM của team Code.txt",
+            "slots": 3,
+            "image": "assets/images/goods25.jpg"
+        },
+        {
+            "id" : "26",
+            "name": "Cặp PTIT",
+            "price": 150000,
+            "description": "cặp PTIT xịn xò",
+            "slots": 1,
+            "image": "assets/images/goods26.jpg"
+        },
+        {
+            "id" : "27",
+            "name": "Mèo cười",
+            "price": 100000,
+            "description": "Mèo cười vô mặt bạn",
+            "slots": 1,
+            "image": "assets/images/goods27.jpg"
         }
     ],
     "laptop" : [
