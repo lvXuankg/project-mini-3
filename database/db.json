@@ -4,6 +4,7 @@
             "id" : "1",
             "name" : "Trạnh Minh Thình",
             "price": 120000,
+            "description": "Có người yêu, cuto",
             "slots": 1,
             "image": "assets/images/human1.jpg"
         },
@@ -11,6 +12,7 @@
             "id" : "2",
             "name" : "Lâm Nhật Tin",
             "price": 5000,
+            "description": "Người Bình Định toi ăn gió ăn sương",
             "slots": 1,
             "image": "assets/images/human2.jpg"
         },
@@ -18,8 +20,17 @@
             "id" : "3",
             "name" : "Tú Sena",
             "price": 1,
+            "description": "Làm lại cuộc đời, nợ 3 tỏi",
             "slots": 1,
             "image": "assets/images/human3.png"
+        },
+        {
+            "id" : "4",
+            "name" : "Chí",
+            "description": "học nhiều vl",
+            "price": 1,
+            "slots": 1,
+            "image": "assets/images/human4.png"
         }
     ],
     "goods" : [
@@ -27,8 +38,121 @@
             "id" : "1",
             "name": "Máy tính casio của Thành",
             "price": 100000,
+            "description": "máy nuột",
             "slots": 1,
             "image": "assets/images/goods1.jpg"
+        },
+        {
+            "id" : "2",
+            "name": "Khô gà 1000 năm của Thành",
+            "price": 15000,
+            "description": "Nhìn trong như mới 10 năm",
+            "slots": 1,
+            "image": "assets/images/goods2.jpg"
+        },
+        {
+            "id" : "3",
+            "name": "Đèn siêu sáng của Tiên",
+            "price": 5000,
+            "description": "Đèn sáng hơn tương lai của bạn",
+            "slots": 1,
+            "image": "assets/images/goods3.jpg"
+        },
+        {
+            "id" : "4",
+            "name": "Bình nước của Thành",
+            "price": 2000,
+            "description": "Có thể sạch !!!",
+            "slots": 1,
+            "image": "assets/images/goods4.jpg"
+        },
+        {
+            "id" : "5",
+            "name": "Nước muối của Dr. Tiên",
+            "price": 100,
+            "description": "đã súc hơn một nửa",
+            "slots": 1,
+            "image": "assets/images/goods5.jpg"
+        },
+        {
+            "id" : "6",
+            "name": "Nước rửa chén của Tiên",
+            "price": 33333,
+            "description": "rửa chén sạch hơn tương lai của bạn",
+            "slots": 1,
+            "image": "assets/images/goods6.jpg"
+        },
+        {
+            "id" : "7",
+            "name": "Đèn của Thành",
+            "price": 8000,
+            "description": "pin chay gần hết rồi",
+            "slots": 1,
+            "image": "assets/images/goods7.jpg"
+        },
+        {
+            "id" : "8",
+            "name": "Hủ muối của Thành",
+            "price": 11000,
+            "description": "mua 10k ở siêu thị",
+            "slots": 1,
+            "image": "assets/images/goods8.jpg"
+        },
+        {
+            "id" : "9",
+            "name": "Dép của Tiên",
+            "price": 1000,
+            "description": "2 chiếc dép không dẫm phải cức vì đi trong nhà",
+            "slots": 1,
+            "image": "assets/images/goods9.jpg"
+        },
+        {
+            "id" : "10",
+            "name": "Cốc nước của Tú",
+            "price": 3000000000,
+            "description": "Cốc nươc tài xỉu",
+            "slots": 1,
+            "image": "assets/images/goods10.jpg"
+        },
+        {
+            "id" : "11",
+            "name": "Chuột của Tú",
+            "price": 5200,
+            "description": "Chuột chơi tài xỉu",
+            "slots": 1,
+            "image": "assets/images/goods11.jpg"
+        },
+        {
+            "id" : "12",
+            "name": "Cặp của Chí",
+            "price": 30000,
+            "description": "Cặp đã trải qua biết bao con A+",
+            "slots": 1,
+            "image": "assets/images/goods12.jpg"
+        },
+        {
+            "id" : "13",
+            "name": "Nón của Tú",
+            "price": 3000,
+            "description": "Đeo vô bị mấy thằng PTIT đập hội đồng",
+            "slots": 1,
+            "image": "assets/images/goods13.jpg"
+        },
+        {
+            "id" : "14",
+            "name": "Điện thoại của Chí",
+            "price": 3213213,
+            "description": "máy mới",
+            "slots": 1,
+            "image": "assets/images/goods14.jpg"
+        },
+        {
+            "id" : "15",
+            "name": "Quạt của Chí",
+            "price": 5000,
+            "description": "Quạt phổ thông ai đều có",
+            "slots": 1,
+            "image": "assets/images/goods15.jpg"
         }
     ],
     "laptop" : [
@@ -36,6 +160,7 @@
             "id" : "1",
             "name": "Acer Nitro 5 của Thành",
             "price": 15000000,
+            "description": "laptop nuột",
             "slots": 1,
             "image": "assets/images/laptop1.jpg"
         }
@@ -44,6 +169,7 @@
         {
             "id" : "1",
             "name": "Sách của Thành",
+            "description": "sách nuột",
             "price": 20000,
             "slots": 1,
             "image": "assets/images/book1.jpg"
@@ -53,12 +179,20 @@
         {
             "id" : "1",
             "name": "Iphone 100 của Thành",
+            "description": "điện thoại nuột",
             "price": 10000000,
             "slots": 1,
             "image": "assets/images/phone1.jfif"
         }
     ],
     "mita": [
-
+        {
+            "id" : "1",
+            "name": "Mila",
+            "description": "Giỏi chơi kiếm, Tsundere, Gojo Satoru",
+            "price": 10000000000,
+            "slots": 1,
+            "image": "assets/images/mita1.png"
+        }
     ]
 }

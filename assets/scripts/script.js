@@ -8,6 +8,24 @@ const fetchApi = (url)=>{
     return result;
 }
 
+// Định dạng giá tiền
+function setPrice(x){
+    var result = "";
+    if(x==0) return "0";
+    while(x > 0){
+        let s = x % 1000;
+        x = Math.floor(x/1000);
+        let num = s.toString();
+        if(x){
+            num = num.padStart(3, "0");
+        }
+        result = num + (result ? "," : "") + result;
+        
+        console.log(x);
+    }
+    return result;
+}
+
 // Thêm icon vào thanh tìm kiếm 
 const input = document.getElementById("search");
 input.placeholder = "\uf002 " + input.placeholder; 
@@ -22,7 +40,7 @@ buttonClose1.addEventListener("click", ()=>{
 });
 
 //Sell Gocery
-const divSell = document.querySelector("#sellGocery");
+const divSell = document.querySelector("#sellGrocery");
 var urls = [
     "http://localhost:3000/humans",
     "http://localhost:3000/goods",
@@ -41,27 +59,42 @@ async function getAllApi(){
     return dataApi;
 
 }
-getAllApi()
+function showAllItem(viewMore){
+    getAllApi()
     .then(data => {
+        let count = 0;
         let htmls = `
         <div class="container">
         <div class="box">
         <div class="row">
             `;
         for(x of data){
+            ++count;
+            if(viewMore == false && count==13){
+                break;
+            }
             htmls += `
                 <div class="col-xl-2 col-lg-3 col-md-6 col-6">
                     <div class="inner-wrap">
-                        <div class="imageContainer">
+                        <div class="imageContainer" >
                             <img src="${x.image}">
                         </div>
                         <h3>${x.name}</h3>
-                        <p>Giá : ${x.price}</p>
+                        <p>Giá : ${setPrice(Number(x.price))}</p>
                         <p>Còn lại: ${x.slots}</p>
                         <button>Thêm vào giỏ hàng</button>
                     </div>
                 </div>
             `;
+        }
+        if(count > 12 && viewMore == false){
+            htmls += `
+            <div class="col-12">
+                <button class="viewMore" onclick="showAllItem(true)">
+                    <i class="fa-solid fa-toggle-off"></i>
+                    <span>View More</span>
+                </button>
+            </div>`
         }
         htmls += `
         </div>
@@ -70,3 +103,11 @@ getAllApi()
         `;
         divSell.innerHTML = htmls;
     })
+}
+showAllItem(false);
+{/* <div class="viewMore">
+            <i class="fa-solid fa-toggle-off"></i>
+            <span>View More</span>
+        </div> */}
+
+
