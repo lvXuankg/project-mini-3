@@ -31,6 +31,13 @@ input.placeholder = "\uf002 " + input.placeholder;
 input.style.fontFamily = "Font Awesome 5 Free"; 
 input.style.fontWeight = "400"; 
 
+//Thêm chức năng chọn nav bar
+const divMenuBar = document.querySelector("#menuBar");
+const divNavBars = document.querySelector("#nav-bars");
+divMenuBar.onclick = ()=>{
+    divNavBars.classList.toggle("show");
+};
+
 //Banner 1
 const buttonClose1 = document.querySelector("#closeBanner1");
 buttonClose1.addEventListener("click", ()=>{
@@ -118,6 +125,12 @@ function showAllItem(viewMore){
         let htmls = `
         <div class="container">
         <div class="box">
+        <div class="buttons">
+            <div class="button1" onclick="SortItems(1)"><i class="fa-solid fa-sort-down"></i></div>
+            <div class="button2" onclick="SortItems(2)"><i class="fa-solid fa-sort-up"></i></div>
+        </div>
+
+        
         <div class="row">
             `;
         for(x of data){
@@ -158,5 +171,49 @@ function showAllItem(viewMore){
 }
 showAllItem(false);
 // End Show All Item 
+// Sort Groceries 
+function displayItems(data){
+    getAllGrocery = data;
+    let count = 0;
+    let htmls = `
+    <div class="container">
+    <div class="box">
+    <div class="buttons">
+        <div class="button1" onclick="SortItems(1)"><i class="fa-solid fa-sort-down"></i></div>
+        <div class="button2" onclick="SortItems(2)"><i class="fa-solid fa-sort-up"></i></div>
+    </div>
 
-
+    
+    <div class="row">
+        `;
+    for(x of data){
+        count++;
+        htmls += `
+            <div class="col-xl-2 col-lg-3 col-md-6 col-6">
+                <div class="inner-wrap" onclick="showItem(${count-1})">
+                    <div class="imageContainer">
+                        <img src="${x.image}">
+                    </div>
+                    <h3>${x.name}</h3>
+                    <p>Giá : ${setPrice(Number(x.price))}</p>
+                    <p>Còn lại: ${x.slots}</p>
+                    <button>Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    htmls += `
+    </div>
+    </div>
+    </div>
+    `;
+    divSell.innerHTML = htmls;
+}
+function SortItems(type){
+    var APIs = getAllGrocery;
+    if(type == 1)   APIs.sort((a, b) => a.price - b.price);
+    else APIs.sort((a,b) => b.price - a.price);
+    displayItems(APIs);
+}
+// End SortGroceries

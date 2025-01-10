@@ -145,16 +145,22 @@ body{
 
 /* End Float Items  */
 /* Header  */
-.header{
-    padding: 0.8rem 0;
+.headerContainer{
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    padding: 0.8rem 0;
+    
     background: #7F7FD5;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    z-index: 50;
+    
 }
 .header .inner-wrap{
     display: flex;
@@ -207,6 +213,40 @@ body{
     font-size: 30px;
     display: none;
     color: #000;
+    width: 20%;
+    text-align: center;
+}
+.header::after{
+    content: "";
+    bottom: 0;
+    right: 15px;
+    background-color: var(--bg-menu);
+}
+.headerContainer .nav-bars{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 59px;
+    margin-left: auto;
+    display: none;
+}
+.headerContainer .nav-bars.show{
+    display: block;
+}
+.headerContainer .nav-bars ul{
+    list-style-type: none;
+    margin-right: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+.headerContainer .nav-bars ul li{
+    padding: 10px 12px;
+    background-color: #fff;
+    transition: 0.6s all;
+    cursor: pointer;
+}.headerContainer .nav-bars ul li:hover{
+    background-color: #f0f0f0;
 }
 @media (max-width: 992px){
     .header .nav{
@@ -292,6 +332,25 @@ body{
     border-radius: 15px;
     overflow: hidden;
     padding: 0.3rem;
+}
+.sellGrocery .box .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+.sellGrocery .box .buttons .button1,
+.sellGrocery .box .buttons .button2{
+    padding: 0.3rem 0.5rem;
+    margin: 0.3rem 0.5rem;
+    background-color: var(--button-1);
+    cursor: pointer;
+    transition: 0.6s all;
+    border-radius: 0 0 5px 5px;
+}
+.sellGrocery .box .buttons .button1:hover,
+.sellGrocery .box .buttons .button2:hover{
+    background-color: var(--button-1-hov);
 }
 .sellGrocery .box .inner-wrap{
     padding: 0.1rem;

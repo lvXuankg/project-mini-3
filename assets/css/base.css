@@ -4,6 +4,10 @@
     --text-hov-2: #E16A54;
     --color-1: #AB886D;
     --button-hov-1: #E82561;
+    --bg-menu: #fcfcfc;
+    --nav-hov: #D0DDD0;
+    --button-1: #FFF6B3;
+    --button-1-hov: #F6C794;
 }
 *{
     font-family: var(--font-use);
