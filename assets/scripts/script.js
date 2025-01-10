@@ -214,7 +214,7 @@ function displayItems(data){
 }
 function SortItems(type){
     var APIs = getAllGrocery;
-    if(type == 1)   APIs.sort((a, b) => a.price - b.price);
+    if(type == 2)   APIs.sort((a, b) => a.price - b.price);
     else APIs.sort((a,b) => b.price - a.price);
     displayItems(APIs);
 }
