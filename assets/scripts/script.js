@@ -26,7 +26,7 @@ function setPrice(x){
 }
 
 // Thêm icon vào thanh tìm kiếm 
-const input = document.getElementById("search");
+const input = document.getElementById("searchInput");
 input.placeholder = "\uf002 " + input.placeholder; 
 input.style.fontFamily = "Font Awesome 5 Free"; 
 input.style.fontWeight = "400"; 
@@ -121,6 +121,7 @@ function showAllItem(viewMore){
     getAllApi()
     .then(data => {
         getAllGrocery = data;
+        themID(getAllGrocery);
         let count = 0;
         let htmls = `
         <div class="container">
@@ -174,6 +175,7 @@ showAllItem(false);
 // Sort Groceries 
 function displayItems(data){
     getAllGrocery = data;
+    themID(getAllGrocery);
     let count = 0;
     let htmls = `
     <div class="container">
@@ -217,3 +219,44 @@ function SortItems(type){
     displayItems(APIs);
 }
 // End SortGroceries
+
+// Thêm id cho object
+function themID(Items){
+    let cnt = 0;
+    Items.forEach(item => {
+        item.ids = cnt++; 
+    });
+}
+
+// Search Hint
+function normalizeString(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+const searchHint = document.getElementById("searchHint");
+
+input.addEventListener("input", ()=>{
+    const inputValue = input.value;
+    searchHint.innerHTML = "";
+
+    if(inputValue){
+        const filteredSuggestions = getAllGrocery.filter(function(value){
+            let textInput = normalizeString(value.name);
+            return textInput.toLowerCase().includes(normalizeString(inputValue).toLowerCase());
+        });
+        console.log(filteredSuggestions);
+        filteredSuggestions.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item.name;
+            listItem.addEventListener("click",()=>{
+                showItem(item.ids);
+                searchHint.style.display = "none";
+            });
+            searchHint.appendChild(listItem);
+        });
+        searchHint.style.display = "block";
+    }
+    else{
+        searchHint.style.display = "none";
+    }
+});
+// End Search Hint 

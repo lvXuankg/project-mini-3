@@ -8,6 +8,8 @@
     --nav-hov: #D0DDD0;
     --button-1: #FFF6B3;
     --button-1-hov: #F6C794;
+    --search-hint: #FEF9E1;
+    --search-hint-hov: #E5D0AC;
 }
 *{
     font-family: var(--font-use);
